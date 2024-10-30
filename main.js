@@ -58,13 +58,13 @@ function toggleLoader(subject) {
   async function changed(ev) {
     console.debug('fyi, this is what a change event looks like', ev)
     const you = ev.target.parentElement.textContent
-    // toggleLoader(you);
+    toggleLoader(you);
 
     // FIXME: notice above that getThemProblem just returns a literal.
     // you should update the code below to instead call getThemProblem.
     // getThemProblem expects a string parameter (the only valid strings are those returned by getOptions), and returns a promise that resolves to a string.
     const they = await getThemProblem(you)
-    // toggleLoader(they);
+    toggleLoader(they);
     const output = document.getElementById('they')
     output.textContent = they
   }
